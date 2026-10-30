@@ -38,11 +38,13 @@ const faqs=[
       <a href="#services">Our services</a><a href="#approach">Our approach</a><a href="#work">Our work</a><a href="#about">About us</a>
     </nav>
     <a href="https://trimlawnorganics.com/contact-us" class="button header-quote">Request a quote</a>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
-    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>
-      <a href="#services">Our services</a><a href="#approach">Our approach</a><a href="#work">Our work</a><a href="#about">About us</a><a href="https://trimlawnorganics.com/contact-us">Request a quote</a><a href="tel:+12526584400">Call (252) 658-4400</a>
-    </nav>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-haspopup="dialog">Menu</button>
   </header>
+  <dialog id="mobile-nav" class="menu-drawer" aria-labelledby="menu-title">
+    <div class="drawer-top"><span id="menu-title" class="wordmark">trimlawn<span>organics</span></span><button class="menu-close" autofocus>Close</button></div>
+    <nav class="drawer-links" aria-label="Mobile navigation"><a href="#services">Our services</a><a href="#approach">Our approach</a><a href="#work">Our work</a><a href="#about">About us</a></nav>
+    <div class="drawer-bottom"><p>Good care. Close to home.</p><a class="button" href="https://trimlawnorganics.com/contact-us">Request a quote</a><a class="drawer-phone" href="tel:+12526584400">(252) 658-4400</a><span>New Bern & surrounding communities</span></div>
+  </dialog>
   <main id="main">
     <section class="hero wrap" aria-labelledby="hero-title">
       <h1 id="hero-title">A greener <span class="inline-garden"><img src="/images/hero-garden.webp" width="180" height="90" alt="" /></span> lawn.<br />A gentler way.</h1>
@@ -56,13 +58,16 @@ const faqs=[
     <section id="services" class="services section" aria-labelledby="services-title"><div class="wrap">
       <div class="section-heading"><h2 id="services-title">Your outdoors.<br />In good hands.</h2><p>From the weekly tidy-up to a fresh start for your garden, we take the work off your hands and put care into every detail.</p></div>
       <div class="service-layout">
-        <div class="service-visual"><img id="service-image" src={services[0].image} alt={services[0].alt} width="1000" height="1000" loading="lazy" /><p id="service-detail">{services[0].detail}</p></div>
+        <div class="service-visual"><img id="service-image" src={services[0].image} alt={services[0].alt} width="1000" height="1000" loading="lazy" /></div>
         <div class="service-options" role="tablist" aria-label="Explore our services" aria-orientation="vertical">
           {services.map((service,i)=><div class:list={['service-option',{active:i===0}]}>
             <button id={`service-tab-${i}`} role="tab" aria-selected={i===0?'true':'false'} aria-controls={`service-panel-${i}`} tabindex={i===0?0:-1} data-image={service.image} data-alt={service.alt} data-detail={service.detail}><span>{service.name}</span><span class="service-state" aria-hidden="true">{i===0?'Selected':'Explore'}</span></button>
             <div role="tabpanel" id={`service-panel-${i}`} aria-labelledby={`service-tab-${i}`} hidden={i!==0}><p>{service.text}</p><a class="text-link" href="https://trimlawnorganics.com/contact-us">Let’s talk about your yard</a></div>
           </div>)}
         </div>
+      </div>
+      <div class="mobile-services">
+        {services.map(service => <article class="mobile-service-card"><img src={service.image} alt={service.alt} width="1000" height="800" loading="lazy" /><div class="mobile-service-copy"><h3>{service.name}</h3><p>{service.text}</p><a class="text-link" href="https://trimlawnorganics.com/contact-us">Let’s talk about your yard</a></div></article>)}
       </div>
       <p class="also-services">A little extra help? We also offer pressure washing, gutter cleaning, and hardscaping. <a href="https://trimlawnorganics.com/contact-us">Just ask us.</a></p>
     </div></section>
@@ -76,7 +81,7 @@ const faqs=[
               <img class="soil-photo soil-photo-first" src="/images/compost.webp" alt="Organic composting in a green garden" width="1200" height="1000" loading="lazy" />
               <img class="soil-photo" src="/images/mulch.webp" alt="Fresh organic mulch around carefully tended planting beds" width="1200" height="1000" loading="lazy" />
               <img class="soil-photo" src="/images/lawn.webp" alt="A cared-for lawn and garden beside a local brick home" width="1200" height="1000" loading="lazy" />
-              <figcaption><span>Good care runs deep.</span><span class="soil-progress">Soil. Roots. Growth.</span></figcaption>
+
             </figure>
           </div>
           <div class="soil-chapters">
@@ -100,23 +105,46 @@ const faqs=[
       </div>
     </section>
 
-    <section id="about" class="about section"><div class="wrap about-layout"><div class="team-portrait"><img src="/images/owners.png" width="267" height="313" alt="The owners of Trim Lawn Organics" loading="lazy" /><span>Your neighbors.<br />Your lawn care team.</span></div><div class="about-copy"><h2>Rooted here.<br />Here for you.</h2><p>We’re Trim Lawn Organics, a veteran-owned team who believes looking after your property means looking after our community, too.</p><p>From a neatly edged lawn to a garden you love coming home to, we bring dependable service, thoughtful work, and a personal touch to every yard.</p><a class="text-link" href="https://trimlawnorganics.com/about-us">Meet your local team</a><p class="military-note">A thank-you for your service: <strong>10% off for active duty and veterans.</strong></p></div></div></section>
+    <section id="about" class="about section"><div class="wrap about-layout"><div class="team-portrait"><img src="/images/owners.png" width="267" height="313" alt="The owners of Trim Lawn Organics" loading="lazy" /></div><div class="about-copy"><h2>Rooted here.<br />Here for you.</h2><p>We’re Trim Lawn Organics, a veteran-owned team who believes looking after your property means looking after our community, too.</p><p>From a neatly edged lawn to a garden you love coming home to, we bring dependable service, thoughtful work, and a personal touch to every yard.</p><a class="text-link" href="https://trimlawnorganics.com/about-us">Meet your local team</a><p class="military-note">A thank-you for your service: <strong>10% off for active duty and veterans.</strong></p></div></div></section>
 
     <section id="reviews" class="reviews section" aria-labelledby="reviews-title"><div class="wrap review-layout"><div class="review-intro"><h2 id="reviews-title">Kind words.<br />Happy neighbors.</h2><a class="text-link" href="https://trimlawnorganics.com/reviews">More from our customers</a></div><div class="review-feature"><blockquote>“Zack and his team provide top quality work. He’s responsive to questions and very dependable. Keeps our yard looking great. Highly recommend.”</blockquote><p><strong>Candace S.</strong><span>Trim Lawn Organics customer</span></p></div><div class="review-secondary"><blockquote>“Owner is responsive! Let him know your needs and he will make it happen.”</blockquote><p><strong>Seth Cormier</strong><span>Review shared on our website</span></p></div></div></section>
 
     <section class="faq wrap section" aria-labelledby="faq-title"><div><h2 id="faq-title">Good questions.<br />Honest answers.</h2><p>Getting to know your lawn care team should feel easy.</p><a class="text-link" href="tel:+12526584400">We’re happy to talk</a></div><div class="questions">{faqs.map(([q,a])=><details><summary>{q}<span aria-hidden="true" class="faq-indicator">+</span></summary><p>{a}</p></details>)}</div></section>
 
-    <section class="contact-banner section" aria-labelledby="contact-title"><div class="contact-picture"><img src="/images/hero-garden.webp" width="1800" height="1575" alt="A home and garden cared for by the Trim Lawn Organics team" loading="lazy" /></div><div class="wrap contact-layout"><div><h2 id="contact-title">Let’s grow<br />something good.</h2><p>Tell us a little about your yard.<br />We’ll take it from there.</p></div><div class="contact-actions"><a class="button button-light" href="https://trimlawnorganics.com/contact-us">Request your quote</a><a class="contact-phone" href="tel:+12526584400">Or call (252) 658-4400</a><span>New Bern & surrounding communities</span></div></div></section>
+    <section class="contact-banner section" aria-labelledby="contact-title"><div class="wrap contact-split"><div class="contact-picture"><img src="/images/hero-garden.webp" width="1800" height="1575" alt="A home and garden cared for by the Trim Lawn Organics team" loading="lazy" /></div><div class="contact-layout"><div><h2 id="contact-title">Let’s grow<br />something good.</h2><p>Tell us a little about your yard.<br />We’ll take it from there.</p></div><div class="contact-actions"><a class="button button-light" href="https://trimlawnorganics.com/contact-us">Request your quote</a><a class="contact-phone" href="tel:+12526584400">Or call (252) 658-4400</a><span>New Bern & surrounding communities</span></div></div></div></section>
     </div>
   </main>
   <footer class="footer wrap"><div class="footer-main"><a class="wordmark" href="#" aria-label="Trim Lawn Organics home">trimlawn<span>organics</span></a><p>A little more care.<br />A naturally better outdoors.</p><div><a href="mailto:TrimLawnOrganics@gmail.com">TrimLawnOrganics@gmail.com</a><a href="tel:+12526584400">(252) 658-4400</a><span>312 Beach Street, New Bern, NC</span></div><div><span>Monday–Saturday, 9am–8pm</span><span>Sunday: taking a little rest.</span><a href="https://trimlawnorganics.com/careers">Grow with our team</a></div></div><div class="footer-bottom"><span>© {new Date().getFullYear()} Trim Lawn Organics</span><nav aria-label="Footer navigation"><a href="#services">Services</a><a href="#work">Our work</a><a href="https://trimlawnorganics.com/blog">Lawn care journal</a><a href="https://trimlawnorganics.com/contact-us">Contact</a></nav><span>Locally rooted. Naturally minded.</span></div></footer>
   <script>
-    const menuButton=document.querySelector<HTMLButtonElement>('.menu-toggle');
-    const mobileNav=document.querySelector<HTMLElement>('#mobile-nav');
-    function closeMenu(){if(!mobileNav||!menuButton)return;mobileNav.hidden=true;menuButton.setAttribute('aria-expanded','false');menuButton.textContent='Menu';}
-    menuButton?.addEventListener('click',()=>{if(!mobileNav)return;const open=mobileNav.hidden;mobileNav.hidden=!open;menuButton.setAttribute('aria-expanded',String(open));menuButton.textContent=open?'Close':'Menu';});
-    mobileNav?.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
-    document.addEventListener('keydown',event=>{if(event.key==='Escape'){closeMenu();}});
+    const menuButton = document.querySelector<HTMLButtonElement>('.menu-toggle');
+    const menuDialog = document.querySelector<HTMLDialogElement>('.menu-drawer');
+    const closeButton = document.querySelector<HTMLButtonElement>('.menu-close');
+    let previousOverflow = '';
+    function closeMenu(restoreFocus = true) {
+      if (!menuDialog?.open) return;
+      menuDialog.close();
+      document.documentElement.style.overflow = previousOverflow;
+      menuButton?.setAttribute('aria-expanded', 'false');
+      if (restoreFocus) menuButton?.focus({ preventScroll: true });
+    }
+    menuButton?.addEventListener('click', () => {
+      if (!menuDialog) return;
+      previousOverflow = document.documentElement.style.overflow;
+      menuDialog.showModal();
+      document.documentElement.style.overflow = 'hidden';
+      menuButton.setAttribute('aria-expanded', 'true');
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        menuDialog.animate([{ transform: 'translateX(100%)' }, { transform: 'translateX(0)' }], { duration: 360, easing: 'cubic-bezier(.16,1,.3,1)' });
+      }
+    });
+    closeButton?.addEventListener('click', () => closeMenu());
+    menuDialog?.addEventListener('cancel', event => { event.preventDefault(); closeMenu(); });
+    menuDialog?.addEventListener('click', event => {
+      const bounds = menuDialog.getBoundingClientRect();
+      if (event.target === menuDialog && (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom)) closeMenu();
+    });
+    menuDialog?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => closeMenu(false)));
+    window.matchMedia('(min-width: 761px)').addEventListener('change', event => { if (event.matches) closeMenu(false); });
     const tabs=Array.from(document.querySelectorAll<HTMLButtonElement>('[role="tab"]'));
     function selectService(index:number){
       tabs.forEach((tab,i)=>{const active=i===index;tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;tab.closest('.service-option')?.classList.toggle('active',active);const panel=document.getElementById(tab.getAttribute('aria-controls')||'');if(panel)panel.hidden=!active;const state=tab.querySelector('.service-state');if(state)state.textContent=active?'Selected':'Explore';});

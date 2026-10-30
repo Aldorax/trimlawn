@@ -10,7 +10,9 @@ export function initExperience() {
   // Split authored line breaks, keeping a single accessible heading name.
   root.querySelectorAll<HTMLElement>('h2:not(.ink-heading), h3').forEach(heading => {
     const lines = heading.innerHTML.split(/<br\s*\/?\s*>/i);
-    heading.setAttribute('aria-label', lines.map(line => line.replace(/<[^>]*>/g, '')).join(' '));
+    const label = document.createElement('span');
+    label.innerHTML = lines.join(' ');
+    heading.setAttribute('aria-label', label.textContent || '');
     heading.innerHTML = lines.map(line => `<span class="line-mask" aria-hidden="true"><span class="line-inner">${line}</span></span>`).join('');
   });
   const inkHeading = root.querySelector<HTMLElement>('.ink-heading');

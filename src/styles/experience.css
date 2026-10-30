@@ -182,3 +182,68 @@
   .experience .contact-layout h2 { font-size: 68px; }
   .experience .contact-actions { align-items: flex-start; padding-top: 35px; }
 }
+
+/* Mobile navigation is a native modal drawer, with the page visible beside it. */
+.menu-drawer {
+  position: fixed;
+  inset: 0 0 0 auto;
+  width: min(86vw, 380px);
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: max(30px, env(safe-area-inset-top)) 26px max(30px, env(safe-area-inset-bottom));
+  border: 0;
+  border-radius: 20px 0 0 20px;
+  background: #f7faf3;
+  color: #111a14;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.menu-drawer[open] { display: flex; flex-direction: column; }
+.menu-drawer::backdrop { background: #07130b80; }
+.drawer-top { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.menu-close { padding: 12px 16px; border: 0; border-radius: 100px; background: #e2edd8; font-size: 14px; color: #111a14; }
+.drawer-links { display: grid; gap: 12px; padding-block: 64px 40px; }
+.drawer-links a { padding-block: 8px; font-size: clamp(26px, 7.6vw, 34px); font-weight: 600; letter-spacing: -.045em; line-height: 1.2; }
+.drawer-links a:hover { color: #397045; transform: translateX(4px); }
+.drawer-bottom { margin-top: auto; display: grid; gap: 17px; padding-top: 30px; }
+.drawer-bottom p { font-size: 15px; color: #52604e; }
+.drawer-bottom .button { width: 100%; }
+.drawer-phone { font-size: 21px; font-weight: 600; letter-spacing: -.025em; }
+.drawer-bottom > span { font-size: 12px; color: #52604e; }
+.mobile-services { display: none; }
+
+/* Photographs remain free of copy; the comparison retains its labels. */
+.experience .service-visual > p, .soil-frame figcaption, .team-portrait > span { display: none; }
+.experience .team-portrait img { height: 100%; max-width: 100%; }
+.experience .contact-banner { min-height: 0; display: block; }
+.contact-split { display: grid; grid-template-columns: 1fr 1.05fr; gap: 70px; align-items: center; }
+.contact-split .contact-picture { position: relative; height: 570px; border-radius: 16px; overflow: hidden; }
+.contact-split .contact-picture::after { display: none; }
+.experience .contact-split .contact-layout { display: block; width: 100%; }
+.experience .contact-split h2 { font-size: clamp(44px, 4.5vw, 64px); }
+.experience .contact-split .contact-actions { align-items: flex-start; padding-top: 30px; }
+@media (max-width: 1000px) {
+  .contact-split { gap: 35px; }
+  .contact-split .contact-picture { height: 500px; }
+  .experience .contact-split h2 { font-size: 42px; }
+}
+@media (max-width: 760px) {
+  .experience .service-layout { display: none; }
+  .mobile-services { display: grid; gap: 28px; }
+  .mobile-service-card { overflow: hidden; border-radius: 14px; background: #1d2a20; }
+  .mobile-service-card > img { width: 100%; height: 260px; object-fit: cover; }
+  .mobile-service-copy { padding: 26px 22px 30px; }
+  .mobile-service-copy h3 { font-size: 29px; line-height: 1.1; letter-spacing: -.04em; color: #fff; }
+  .mobile-service-copy p { font-size: 15px; line-height: 1.7; color: #c1cebd; margin-top: 18px; }
+  .mobile-service-copy .text-link { color: #c3e89b; font-size: 15px; margin-top: 22px; }
+  .contact-split { grid-template-columns: 1fr; gap: 35px; }
+  .contact-split .contact-picture { height: 330px; }
+  .experience .contact-split h2 { font-size: clamp(40px, 11vw, 60px); }
+}
+@media (max-height: 650px) {
+  .drawer-links { padding-block: 30px 20px; gap: 5px; }
+  .drawer-links a { font-size: 26px; }
+  .drawer-bottom { gap: 12px; padding-top: 15px; }
+}
