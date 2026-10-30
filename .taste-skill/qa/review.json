@@ -1,0 +1,39 @@
+{
+  "direction": "Sentence as layout",
+  "seed": 1635589100,
+  "idea": "The client’s own garden photograph becomes a window within the promise of a greener lawn.",
+  "adaptations": [
+    "Natural sage palette follows the existing green brand.",
+    "Soft rounded image frames follow the user’s explicit request.",
+    "No pinned scrolling; ordinary scrolling suits this local service page."
+  ],
+  "liveInteraction": "Keyboard-accessible service selection and project comparison",
+  "viewports": [
+    390,
+    768,
+    1440
+  ],
+  "checks": {
+    "horizontalOverflow": false,
+    "headingMaxLines": 2,
+    "brokenLoadedImages": 0,
+    "mobileMenu": "passed",
+    "serviceSelection": "passed",
+    "comparisonSlider": "passed",
+    "faqExpansion": "passed",
+    "build": "passed"
+  },
+  "scores": {
+    "design": 8,
+    "usability": 8,
+    "creativity": 7,
+    "content": 8,
+    "overall": 7.8
+  },
+  "limitations": [
+    "Team portrait is low resolution in the original source.",
+    "Quote requests use the existing live contact page; delivery was not tested.",
+    "Source image pair uses different viewpoints.",
+    "Screenshots and DOM measurements used through the provided browser; standalone inspector not run."
+  ]
+}

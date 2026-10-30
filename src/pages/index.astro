@@ -1,16 +1,132 @@
 ---
+import '../styles/global.css';
+import '../styles/experience.css';
+const services = [
+  {name:'Lawn care & maintenance',text:'The kind of care that keeps your yard looking its best. Routine mowing, crisp edging, hedge trimming, and seasonal cleanups, all handled by a dependable local crew.',image:'/images/maintenance.webp',alt:'Lawn mower cutting healthy green grass, from the Trim Lawn Organics website',detail:'Mowing · Edging · Seasonal cleanups',key:'Lawn Care'},
+  {name:'Garden & landscape design',text:'Make a little more of your outdoors. Thoughtful planting, fresh mulch, native gardens, and landscape improvements that feel right at home on your property.',image:'/images/mulch.webp',alt:'Freshly mulched garden and planted beds around a North Carolina home',detail:'Native planting · Mulching · Landscape design',key:'Garden & Design'},
+  {name:'Organic soil programs',text:'Good things grow from healthy soil. We start with soil samples, then build a tailored plan with organic fertilizers, compost, aeration, and seasonal care.',image:'/images/compost.webp',alt:'Compost bins surrounded by a green garden',detail:'Soil testing · Compost · Natural treatments',key:'Organic Soil Program'}
+];
+const faqs=[
+  ['What makes your lawn care organic?','We use organic fertilizers, compost, and natural soil treatments. Our soil programs start with testing and are tailored to the conditions in your yard, with ongoing care as the soil responds.'],
+  ['Which areas do you serve?','We work with homeowners in New Bern and surrounding communities, including James City, Havelock, and Morehead City. Contact us with your property location to check availability in your neighborhood.'],
+  ['Can you help with more than mowing?','Yes. Our services include garden and landscape design, mulching, hedge trimming, seasonal cleanups, aeration, and organic soil care. We also offer pressure washing, gutter cleaning, and hardscaping. Tell us what your property needs.'],
+  ['How soon will I see results?','Fresh mowing, edging, and mulching make an immediate visual difference. Improving soil biology is a longer process: we monitor your soil over the seasons and adjust your program as it develops. Every lawn is different.'],
+  ['Do you offer a military discount?','Yes. Active-duty service members and veterans receive 10% off. Mention your military status when you contact us so we can confirm the details for your service.'],
+  ['How do I get a quote?','Choose “Request a quote” to open our existing contact form, or call (252) 658-4400. Tell us where your property is and what you need, and we’ll discuss the next steps with you.']
+];
 ---
-
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#eef1e8" />
+  <meta name="description" content="Organic lawn care, thoughtful landscaping, and healthier soil in New Bern, NC. Meet Trim Lawn Organics, your veteran-owned local lawn care team." />
+  <meta property="og:title" content="Trim Lawn Organics — A greener lawn. A gentler way." />
+  <meta property="og:description" content="Organic lawn care and landscaping, rooted in New Bern. Veteran owned. Naturally minded." />
+  <meta property="og:image" content="/images/hero-garden.webp" />
+  <title>Trim Lawn Organics | Organic Lawn Care in New Bern, NC</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preload" href="/fonts/bricolage.ttf" as="font" type="font/ttf" crossorigin />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="announcement">Proudly veteran owned. <span>10% off for active duty & veterans.</span></div>
+  <header class="header wrap">
+    <a class="wordmark" href="#" aria-label="Trim Lawn Organics home">trimlawn<span>organics</span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#services">Our services</a><a href="#approach">Our approach</a><a href="#work">Our work</a><a href="#about">About us</a>
+    </nav>
+    <a href="https://trimlawnorganics.com/contact-us" class="button header-quote">Request a quote</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden>
+      <a href="#services">Our services</a><a href="#approach">Our approach</a><a href="#work">Our work</a><a href="#about">About us</a><a href="https://trimlawnorganics.com/contact-us">Request a quote</a><a href="tel:+12526584400">Call (252) 658-4400</a>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <h1 id="hero-title">A greener <span class="inline-garden"><img src="/images/hero-garden.webp" width="180" height="90" alt="" /></span> lawn.<br />A gentler way.</h1>
+      <p>Organic lawn care. Thoughtful landscaping.<br class="desktop-break" /> A little more love for your corner of New Bern.</p>
+      <div class="hero-actions"><a class="button" href="https://trimlawnorganics.com/contact-us">Let’s care for your lawn</a><a class="text-link" href="#services">Explore our services</a></div>
+      <figure class="hero-photo"><img src="/images/hero-garden.webp" alt="A freshly cared-for New Bern home with neatly mulched garden beds and mature trees" width="1800" height="1575" fetchpriority="high" /><figcaption><span>Real yards. Real care.</span><span>New Bern, North Carolina</span></figcaption></figure>
+      <div class="values"><p>Locally owned.<br /><strong>Neighborly by nature.</strong></p><p>Organic from the ground up.<br /><strong>Good care starts with the soil.</strong></p><p>Veteran owned & operated.<br /><strong>Care you can count on.</strong></p></div>
+    </section>
+
+    <div class="experience">
+    <section id="services" class="services section" aria-labelledby="services-title"><div class="wrap">
+      <div class="section-heading"><h2 id="services-title">Your outdoors.<br />In good hands.</h2><p>From the weekly tidy-up to a fresh start for your garden, we take the work off your hands and put care into every detail.</p></div>
+      <div class="service-layout">
+        <div class="service-visual"><img id="service-image" src={services[0].image} alt={services[0].alt} width="1000" height="1000" loading="lazy" /><p id="service-detail">{services[0].detail}</p></div>
+        <div class="service-options" role="tablist" aria-label="Explore our services" aria-orientation="vertical">
+          {services.map((service,i)=><div class:list={['service-option',{active:i===0}]}>
+            <button id={`service-tab-${i}`} role="tab" aria-selected={i===0?'true':'false'} aria-controls={`service-panel-${i}`} tabindex={i===0?0:-1} data-image={service.image} data-alt={service.alt} data-detail={service.detail}><span>{service.name}</span><span class="service-state" aria-hidden="true">{i===0?'Selected':'Explore'}</span></button>
+            <div role="tabpanel" id={`service-panel-${i}`} aria-labelledby={`service-tab-${i}`} hidden={i!==0}><p>{service.text}</p><a class="text-link" href="https://trimlawnorganics.com/contact-us">Let’s talk about your yard</a></div>
+          </div>)}
+        </div>
+      </div>
+      <p class="also-services">A little extra help? We also offer pressure washing, gutter cleaning, and hardscaping. <a href="https://trimlawnorganics.com/contact-us">Just ask us.</a></p>
+    </div></section>
+
+    <section id="approach" class="approach section" aria-labelledby="approach-title">
+      <div class="wrap">
+        <div class="section-heading"><h2 id="approach-title">It starts<br />with the soil.</h2><p>There’s a whole world beneath your lawn. We help it thrive, so everything above it can, too.</p></div>
+        <div class="soil-story">
+          <div class="soil-stage">
+            <figure class="soil-frame">
+              <img class="soil-photo soil-photo-first" src="/images/compost.webp" alt="Organic composting in a green garden" width="1200" height="1000" loading="lazy" />
+              <img class="soil-photo" src="/images/mulch.webp" alt="Fresh organic mulch around carefully tended planting beds" width="1200" height="1000" loading="lazy" />
+              <img class="soil-photo" src="/images/lawn.webp" alt="A cared-for lawn and garden beside a local brick home" width="1200" height="1000" loading="lazy" />
+              <figcaption><span>Good care runs deep.</span><span class="soil-progress">Soil. Roots. Growth.</span></figcaption>
+            </figure>
+          </div>
+          <div class="soil-chapters">
+            <article class="soil-chapter"><h3>Get to know<br />your ground.</h3><p>We start with soil samples, not guesswork. Testing helps us understand your soil’s condition and build a plan around what your yard actually needs.</p><span class="chapter-detail">Soil testing & a plan for your property</span></article>
+            <article class="soil-chapter"><h3>Give nature<br />a helping hand.</h3><p>Organic fertilizers, compost, and natural treatments help support the living soil. Aeration makes room for air, water, and roots.</p><span class="chapter-detail">Organic nourishment & natural treatments</span></article>
+            <article class="soil-chapter"><h3>Grow better.<br />Season by season.</h3><p>Healthy soil takes time. We follow your lawn’s progress and adjust your care through the seasons, building on what’s working.</p><a class="text-link" href="https://trimlawnorganics.com/soil-biology">Explore our soil programs</a></article>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="nature-statement" aria-labelledby="nature-title">
+      <div class="wrap"><h2 id="nature-title" class="ink-heading">A little more nature.<br />A lot more life.</h2><div class="nature-bottom"><p>For the lawn you love.<br />And the world just beyond it.</p><p>Organic care, rooted in our community.<br />That’s the Trim Lawn way.</p></div></div>
+    </section>
+
+    <section id="work" class="work wrap section" aria-labelledby="work-title">
+      <div class="section-heading"><h2 id="work-title">The difference<br />is in the details.</h2><div><p>Thoughtful care makes room for the beauty that’s already there. Take a look at a little of our work.</p><a class="text-link" href="https://trimlawnorganics.com/gallery">See the full gallery</a></div></div>
+      <div class="project-grid">
+        <figure class="comparison-project"><div class="comparison" style="--reveal:50%"><img class="after-image" src="/images/garden-after.webp" width="1200" height="1000" alt="After: a defined, freshly mulched bed around a mature tree" loading="lazy" /><div class="before-image"><img src="/images/garden-before.webp" width="1200" height="1000" alt="Before: an unfinished garden bed around the same tree" loading="lazy" /></div><span class="image-label before-label">Before</span><span class="image-label after-label">After</span><div class="comparison-divider" aria-hidden="true"><span>Drag</span></div><input type="range" id="comparison-range" min="0" max="100" value="50" aria-label="Compare the garden before and after care" /></div><figcaption><strong>A little definition goes a long way.</strong><span>Garden bed refresh & mulching</span></figcaption></figure>
+        <figure class="second-project"><img src="/images/mulch.webp" width="1200" height="1000" alt="A cottage garden refreshed with dark mulch and carefully defined planting beds" loading="lazy" /><figcaption><strong>A warmer welcome home.</strong><span>Landscape care & seasonal refresh</span></figcaption></figure>
+        <figure class="third-project"><img src="/images/courtyard.webp" width="1200" height="1000" alt="Landscaped courtyard with seating and carefully maintained garden beds" loading="lazy" /><figcaption><strong>Room to gather. Space to grow.</strong><span>Courtyard & commercial landscape care</span></figcaption></figure>
+      </div>
+    </section>
+
+    <section id="about" class="about section"><div class="wrap about-layout"><div class="team-portrait"><img src="/images/owners.png" width="267" height="313" alt="The owners of Trim Lawn Organics" loading="lazy" /><span>Your neighbors.<br />Your lawn care team.</span></div><div class="about-copy"><h2>Rooted here.<br />Here for you.</h2><p>We’re Trim Lawn Organics, a veteran-owned team who believes looking after your property means looking after our community, too.</p><p>From a neatly edged lawn to a garden you love coming home to, we bring dependable service, thoughtful work, and a personal touch to every yard.</p><a class="text-link" href="https://trimlawnorganics.com/about-us">Meet your local team</a><p class="military-note">A thank-you for your service: <strong>10% off for active duty and veterans.</strong></p></div></div></section>
+
+    <section id="reviews" class="reviews section" aria-labelledby="reviews-title"><div class="wrap review-layout"><div class="review-intro"><h2 id="reviews-title">Kind words.<br />Happy neighbors.</h2><a class="text-link" href="https://trimlawnorganics.com/reviews">More from our customers</a></div><div class="review-feature"><blockquote>“Zack and his team provide top quality work. He’s responsive to questions and very dependable. Keeps our yard looking great. Highly recommend.”</blockquote><p><strong>Candace S.</strong><span>Trim Lawn Organics customer</span></p></div><div class="review-secondary"><blockquote>“Owner is responsive! Let him know your needs and he will make it happen.”</blockquote><p><strong>Seth Cormier</strong><span>Review shared on our website</span></p></div></div></section>
+
+    <section class="faq wrap section" aria-labelledby="faq-title"><div><h2 id="faq-title">Good questions.<br />Honest answers.</h2><p>Getting to know your lawn care team should feel easy.</p><a class="text-link" href="tel:+12526584400">We’re happy to talk</a></div><div class="questions">{faqs.map(([q,a])=><details><summary>{q}<span aria-hidden="true" class="faq-indicator">+</span></summary><p>{a}</p></details>)}</div></section>
+
+    <section class="contact-banner section" aria-labelledby="contact-title"><div class="contact-picture"><img src="/images/hero-garden.webp" width="1800" height="1575" alt="A home and garden cared for by the Trim Lawn Organics team" loading="lazy" /></div><div class="wrap contact-layout"><div><h2 id="contact-title">Let’s grow<br />something good.</h2><p>Tell us a little about your yard.<br />We’ll take it from there.</p></div><div class="contact-actions"><a class="button button-light" href="https://trimlawnorganics.com/contact-us">Request your quote</a><a class="contact-phone" href="tel:+12526584400">Or call (252) 658-4400</a><span>New Bern & surrounding communities</span></div></div></section>
+    </div>
+  </main>
+  <footer class="footer wrap"><div class="footer-main"><a class="wordmark" href="#" aria-label="Trim Lawn Organics home">trimlawn<span>organics</span></a><p>A little more care.<br />A naturally better outdoors.</p><div><a href="mailto:TrimLawnOrganics@gmail.com">TrimLawnOrganics@gmail.com</a><a href="tel:+12526584400">(252) 658-4400</a><span>312 Beach Street, New Bern, NC</span></div><div><span>Monday–Saturday, 9am–8pm</span><span>Sunday: taking a little rest.</span><a href="https://trimlawnorganics.com/careers">Grow with our team</a></div></div><div class="footer-bottom"><span>© {new Date().getFullYear()} Trim Lawn Organics</span><nav aria-label="Footer navigation"><a href="#services">Services</a><a href="#work">Our work</a><a href="https://trimlawnorganics.com/blog">Lawn care journal</a><a href="https://trimlawnorganics.com/contact-us">Contact</a></nav><span>Locally rooted. Naturally minded.</span></div></footer>
+  <script>
+    const menuButton=document.querySelector<HTMLButtonElement>('.menu-toggle');
+    const mobileNav=document.querySelector<HTMLElement>('#mobile-nav');
+    function closeMenu(){if(!mobileNav||!menuButton)return;mobileNav.hidden=true;menuButton.setAttribute('aria-expanded','false');menuButton.textContent='Menu';}
+    menuButton?.addEventListener('click',()=>{if(!mobileNav)return;const open=mobileNav.hidden;mobileNav.hidden=!open;menuButton.setAttribute('aria-expanded',String(open));menuButton.textContent=open?'Close':'Menu';});
+    mobileNav?.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
+    document.addEventListener('keydown',event=>{if(event.key==='Escape'){closeMenu();}});
+    const tabs=Array.from(document.querySelectorAll<HTMLButtonElement>('[role="tab"]'));
+    function selectService(index:number){
+      tabs.forEach((tab,i)=>{const active=i===index;tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;tab.closest('.service-option')?.classList.toggle('active',active);const panel=document.getElementById(tab.getAttribute('aria-controls')||'');if(panel)panel.hidden=!active;const state=tab.querySelector('.service-state');if(state)state.textContent=active?'Selected':'Explore';});
+      const tab=tabs[index];const image=document.querySelector<HTMLImageElement>('#service-image');if(image&&tab){image.src=tab.dataset.image||'';image.alt=tab.dataset.alt||'';if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){image.animate([{opacity:0.45,transform:'scale(1.035)'},{opacity:1,transform:'scale(1)'}],{duration:500,easing:'cubic-bezier(.16,1,.3,1)'});}const detail=document.querySelector('#service-detail');if(detail)detail.textContent=tab.dataset.detail||'';}
+    }
+    tabs.forEach((tab,i)=>{tab.addEventListener('click',()=>selectService(i));tab.addEventListener('keydown',event=>{let next=i;if(event.key==='ArrowDown'||event.key==='ArrowRight')next=(i+1)%tabs.length;else if(event.key==='ArrowUp'||event.key==='ArrowLeft')next=(i-1+tabs.length)%tabs.length;else if(event.key==='Home')next=0;else if(event.key==='End')next=tabs.length-1;else return;event.preventDefault();selectService(next);tabs[next].focus();});});
+    document.querySelector<HTMLInputElement>('#comparison-range')?.addEventListener('input',event=>{const range=event.target as HTMLInputElement;document.querySelector<HTMLElement>('.comparison')?.style.setProperty('--reveal',`${range.value}%`);});
+    import { initExperience } from '../scripts/experience';
+    initExperience();
+
+  </script>
+</body>
 </html>

@@ -1,0 +1,184 @@
+/* The hero keeps its original palette and composition. Chapters below it
+   use a separate black, white, and green system. */
+.experience {
+  --bg: #fff;
+  --surface: #f2f5ee;
+  --ink: #111a14;
+  --muted: #505c51;
+  --accent: #285b39;
+  --green: #c3e89b;
+  --black: #111a14;
+  background: var(--bg);
+  color: var(--ink);
+}
+.experience .section { padding-block: 124px; }
+.experience h2 { font-size: clamp(48px, 5.6vw, 80px); letter-spacing: -.06em; line-height: 1.02; }
+.experience .section-heading { gap: 70px; margin-bottom: 64px; }
+.experience .section-heading p { font-size: 18px; }
+.experience .text-link { font-size: 16px; }
+.experience .line-mask { display: block; overflow: hidden; padding-bottom: .09em; margin-bottom: -.09em; }
+.experience .line-inner { display: block; }
+.experience .services { margin-top: 110px; background: var(--black); color: #fff; overflow: hidden; }
+.experience .services .section-heading p { color: #b9c5b8; }
+.experience .service-layout { grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: stretch; }
+.experience .service-visual { position: relative; min-height: 570px; overflow: hidden; border-radius: 18px; }
+.experience .service-visual > img { position: absolute; inset: 0; width: 100%; height: 100%; border-radius: 0; object-position: 50% 50%; }
+.experience .service-visual > p { position: absolute; bottom: 22px; left: 22px; right: 22px; background: #fff; color: #18271c; padding: 17px 22px; border-radius: 8px; font-size: 14px; margin: 0; }
+.experience .service-options { justify-content: center; gap: 14px; }
+.experience .service-option { padding: 27px; background: #1d2a20; border-radius: 12px; }
+.experience .service-option.active { background: var(--green); color: var(--black); }
+.experience .service-option button { font-size: clamp(23px, 2.15vw, 31px); line-height: 1.12; letter-spacing: -.04em; }
+.experience .service-option .service-state { font-size: 12px; color: #c7d1c6; }
+.experience .service-option.active .service-state { color: #3d5636; }
+.experience .service-option [role=tabpanel] p { margin-top: 22px; font-size: 16px; line-height: 1.65; color: #30472c; }
+.experience .service-option .text-link { margin-top: 25px; color: #14251a; }
+.experience .also-services { color: #b9c5b8; margin-top: 42px; font-size: 14px; text-align: left; }
+.experience .also-services a { color: #fff; }
+.experience .approach { background: #fff; }
+.soil-story { display: grid; grid-template-columns: 1.1fr 1fr; gap: 95px; align-items: start; }
+.soil-stage { position: sticky; top: 50px; }
+.soil-frame { position: relative; height: min(680px, 78svh); min-height: 430px; border-radius: 18px; overflow: hidden; background: #d5e7c4; }
+.soil-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; }
+.soil-photo-first { opacity: 1; }
+.soil-frame figcaption { position: absolute; bottom: 25px; left: 25px; right: 25px; padding: 22px; background: #fff; display: grid; gap: 5px; border-radius: 10px; }
+.soil-frame figcaption > span:first-child { font-size: 25px; font-weight: 600; letter-spacing: -.03em; }
+.soil-progress { font-size: 13px; color: var(--muted); }
+.soil-chapter { min-height: 52svh; display: flex; flex-direction: column; justify-content: center; padding-block: 45px; }
+.soil-chapter h3 { font-size: clamp(32px, 3.3vw, 46px); line-height: 1.08; }
+.soil-chapter p { font-size: 17px; line-height: 1.7; max-width: 36ch; margin-top: 25px; }
+.chapter-detail, .soil-chapter .text-link { font-size: 14px; margin-top: 28px; color: #285b39; }
+.nature-statement { background: var(--green); color: #101a12; padding-block: 120px 64px; overflow: hidden; }
+.experience .nature-statement h2 { font-size: clamp(60px, 7.2vw, 104px); line-height: 1.05; letter-spacing: -.06em; }
+.ink-word { display: inline-block; }
+.nature-bottom { display: flex; justify-content: space-between; gap: 35px; padding-top: 80px; }
+.nature-bottom p { font-size: 16px; color: #30452b; }
+.experience .work .section-heading { grid-template-columns: 1.2fr 1fr; }
+.experience .project-grid { grid-template-columns: 1fr 1fr; gap: 55px 40px; }
+.experience .comparison-project { grid-column: 1 / -1; }
+.experience .comparison { height: 610px; border-radius: 16px; }
+.experience .comparison img { object-position: 50% 52%; }
+.experience .image-label { font-size: 14px; padding: 8px 18px; top: 25px; }
+.experience .comparison-divider span { width: 70px; height: 70px; background: var(--green); box-shadow: none; color: #132517; font-weight: 600; }
+.experience .project-grid figcaption { display: flex; justify-content: space-between; align-items: baseline; gap: 15px; padding-top: 20px; }
+.experience .project-grid figcaption strong { font-size: 22px; }
+.experience .project-grid figcaption span { font-size: 13px; }
+.experience .second-project { padding-top: 0; }
+.experience .second-project > img, .third-project > img { height: 430px; width: 100%; object-fit: cover; border-radius: 16px; }
+.third-project { padding-top: 90px; }
+.experience .second-project figcaption, .third-project figcaption { display: grid; gap: 6px; }
+.experience .about { background: var(--black); color: #fff; padding-block: 110px; }
+.experience .about-layout { grid-template-columns: 1fr 1.1fr; gap: 105px; }
+.experience .team-portrait { background: var(--green); border-radius: 16px; height: 530px; color: var(--black); }
+.experience .team-portrait > span { font-size: 18px; left: 30px; top: 30px; }
+.experience .team-portrait img { height: 435px; }
+.experience .about-copy > p { color: #bec8bb; font-size: 17px; }
+.experience .about-copy .text-link { color: #fff; }
+.experience .about-copy .military-note { color: #c3e89b; font-size: 14px; margin-top: 38px; }
+.experience .reviews { display: block; background: #c3e89b; padding-block: 110px; }
+.review-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 45px 90px; }
+.experience .review-intro .text-link { margin-top: 32px; }
+.experience .review-feature { padding-top: 8px; }
+.experience .review-feature blockquote { font-size: clamp(27px, 2.5vw, 36px); color: #162719; line-height: 1.3; }
+.experience .review-feature > p { margin-top: 30px; }
+.experience .review-feature p span { color: #38502f; }
+.experience .review-secondary { background: #acd382; border-radius: 12px; grid-column: 2; padding: 32px; }
+.experience .review-secondary blockquote { font-size: 23px; }
+.experience .faq { grid-template-columns: 1fr 1.1fr; padding-block: 124px; gap: 80px; }
+.experience .questions { gap: 12px; }
+.experience .questions details { border-radius: 8px; background: #f0f4ec; padding: 24px; }
+.experience .questions summary { font-size: 18px; }
+.experience .questions details[open] { background: #dcebcf; }
+.experience .questions details p { font-size: 16px; }
+.experience .contact-banner { position: relative; min-height: 760px; background: #111a14; color: #fff; display: flex; align-items: center; overflow: hidden; }
+.contact-picture { position: absolute; inset: 0; }
+.contact-picture::after { content: ''; position: absolute; inset: 0; background: #08110bd9; }
+.contact-picture img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; }
+.experience .contact-layout { position: relative; z-index: 1; width: min(1240px, calc(100% - 96px)); }
+.experience .contact-layout h2 { font-size: clamp(60px, 7vw, 100px); color: #fff; }
+.experience .contact-layout p { color: #d0dacb; }
+.experience .button-light { background: var(--green); color: #111a14; min-height: 64px; font-size: 17px; }
+.experience .button-light:hover { background: #fff; }
+.footer { color: #111a14; }
+.footer .wordmark { color: #111a14; }
+.footer .footer-main { padding-bottom: 15px; }
+@media (max-width: 1100px) {
+  .experience .section { padding-block: 90px; }
+  .experience .service-layout { gap: 32px; }
+  .experience .service-visual { min-height: 560px; }
+  .experience .service-option { padding: 23px; }
+  .soil-story { gap: 55px; }
+  .experience .about-layout { gap: 55px; }
+  .review-layout { gap: 40px; }
+  .experience .faq { gap: 40px; }
+  .experience .comparison { height: 520px; }
+  .experience .contact-layout { width: calc(100% - 64px); }
+}
+@media (max-width: 760px) {
+  .experience .section { padding-block: 70px; }
+  .experience h2 { font-size: clamp(38px, 10.5vw, 54px); }
+  .experience .section-heading { gap: 23px; margin-bottom: 35px; }
+  .experience .section-heading p { font-size: 16px; }
+  .experience .services { margin-top: 65px; }
+  .experience .service-layout { display: flex; gap: 22px; }
+  .experience .service-visual { min-height: 350px; }
+  .experience .service-visual > p { padding: 16px; font-size: 12px; bottom: 16px; left: 16px; right: 16px; }
+  .experience .service-option { padding: 24px 20px; }
+  .experience .service-option button { font-size: 23px; }
+  .experience .service-option [role=tabpanel] p { font-size: 15px; }
+  .experience .also-services { margin-top: 26px; font-size: 13px; }
+  .soil-story { display: flex; flex-direction: column; gap: 12px; }
+  .soil-stage { position: relative; top: auto; width: 100%; }
+  .soil-frame { min-height: 0; height: 390px; }
+  .soil-frame figcaption { padding: 18px; bottom: 16px; left: 16px; right: 16px; }
+  .soil-frame figcaption > span:first-child { font-size: 22px; }
+  .soil-chapter { min-height: 0; padding-block: 29px; }
+  .soil-chapter h3 { font-size: 33px; }
+  .soil-chapter p { font-size: 16px; margin-top: 18px; }
+  .chapter-detail, .soil-chapter .text-link { margin-top: 17px; }
+  .nature-statement { padding-block: 72px 40px; }
+  .experience .nature-statement h2 { font-size: clamp(33px, 8.8vw, 60px); }
+  .nature-bottom { padding-top: 45px; gap: 25px; }
+  .nature-bottom p { font-size: 13px; }
+  .experience .work .section-heading { grid-template-columns: 1fr; }
+  .experience .project-grid { grid-template-columns: 1fr; gap: 35px; }
+  .experience .comparison-project { grid-column: auto; }
+  .experience .comparison { height: 375px; }
+  .experience .image-label { top: 17px; padding: 7px 14px; font-size: 12px; }
+  .experience .comparison-divider span { width: 58px; height: 58px; }
+  .experience .project-grid figcaption { display: grid; gap: 5px; padding-top: 16px; }
+  .experience .project-grid figcaption strong { font-size: 20px; }
+  .experience .second-project > img, .third-project > img { height: 350px; }
+  .third-project { padding-top: 0; }
+  .experience .about-layout { grid-template-columns: 1fr; gap: 38px; }
+  .experience .team-portrait { height: 390px; }
+  .experience .team-portrait img { height: 325px; }
+  .experience .team-portrait > span { font-size: 16px; }
+  .experience .about-copy > p { font-size: 16px; }
+  .review-layout { grid-template-columns: 1fr; gap: 35px; }
+  .experience .review-feature { padding: 0; }
+  .experience .review-feature blockquote { font-size: 27px; }
+  .experience .review-secondary { grid-column: auto; padding: 27px; }
+  .experience .review-secondary blockquote { font-size: 21px; }
+  .experience .faq { grid-template-columns: 1fr; gap: 35px; }
+  .experience .questions details { padding: 22px 20px; }
+  .experience .questions summary { font-size: 16px; }
+  .experience .questions details p { font-size: 15px; }
+  .experience .contact-banner { min-height: 640px; }
+  .experience .contact-layout { width: calc(100% - 40px); }
+  .experience .contact-layout h2 { font-size: clamp(42px, 12vw, 70px); }
+  .experience .button-light { min-height: 57px; font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .soil-stage { position: relative; top: auto; }
+  .soil-photo { transform: none !important; }
+  .ink-word { opacity: 1 !important; }
+}
+.experience .team-portrait { background: #000; color: #fff; }
+.experience .third-project figcaption { display: grid; gap: 6px; }
+.experience .review-intro h2 { font-size: clamp(40px, 4.8vw, 68px); }
+.experience .faq h2 { font-size: clamp(38px, 4.8vw, 68px); }
+@media (min-width: 761px) and (max-width: 1000px) {
+  .experience .contact-layout { display: block; }
+  .experience .contact-layout h2 { font-size: 68px; }
+  .experience .contact-actions { align-items: flex-start; padding-top: 35px; }
+}

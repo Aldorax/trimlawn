@@ -1,0 +1,42 @@
+{
+  "sourceWebsite": "https://trimlawnorganics.com/",
+  "usage": "Existing business photography reused at the user\u2019s request. No generated or substitute project imagery.",
+  "assets": [
+    {
+      "file": "public/images/hero-garden.webp",
+      "url": "https://assets.cdn.filesafe.space/KQzMaPrsKM9s5kamdSSW/media/693087bbf4c06dc8af97407e.jpg"
+    },
+    {
+      "file": "public/images/owners.png",
+      "url": "https://assets.cdn.filesafe.space/KQzMaPrsKM9s5kamdSSW/media/6899085a91bb12d2f2e33c37.png"
+    },
+    {
+      "file": "public/images/lawn.webp",
+      "url": "https://assets.cdn.filesafe.space/KQzMaPrsKM9s5kamdSSW/media/6a7a3b889a9c7792eafb0d55.webp"
+    },
+    {
+      "file": "public/images/compost.webp",
+      "url": "https://assets.cdn.filesafe.space/KQzMaPrsKM9s5kamdSSW/media/6a7a3b4f9994d35aa08e703e.webp"
+    },
+    {
+      "file": "public/images/mulch.webp",
+      "url": "https://assets.cdn.filesafe.space/KQzMaPrsKM9s5kamdSSW/media/6a7a4896a743316404595b57.webp"
+    },
+    {
+      "file": "public/images/garden-before.webp",
+      "url": "https://assets.cdn.filesafe.space/KQzMaPrsKM9s5kamdSSW/media/6a7a39b29994d35aa08b50f4.webp"
+    },
+    {
+      "file": "public/images/garden-after.webp",
+      "url": "https://assets.cdn.filesafe.space/KQzMaPrsKM9s5kamdSSW/media/6a7a3a0503343f290f0ad5ee.webp"
+    },
+    {
+      "file": "public/images/courtyard.webp",
+      "url": "https://assets.cdn.filesafe.space/KQzMaPrsKM9s5kamdSSW/media/6a7a47ca1635e466c1de1988.webp"
+    },
+    {
+      "file": "public/images/maintenance.webp",
+      "url": "https://assets.cdn.filesafe.space/KQzMaPrsKM9s5kamdSSW/media/6a7a3aee1635e466c1cb22fe.webp"
+    }
+  ]
+}
