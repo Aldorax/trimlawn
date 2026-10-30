@@ -1,0 +1,30 @@
+{
+  "request": "Keep hero; strengthen sectioning, white/black/green palette, imagery and scroll animation.",
+  "hero": "Preserved",
+  "viewportsChecked": [
+    390,
+    768,
+    1440
+  ],
+  "checks": {
+    "horizontalOverflow": false,
+    "brokenLoadedImages": 0,
+    "phoneStickyStoryFallback": "stacked layout",
+    "keyboardServiceSelection": "passed",
+    "comparisonSlider": "passed",
+    "faqDisclosure": "passed",
+    "desktopPhotoSequence": "passed",
+    "scrollTextFill": "passed",
+    "productionBuild": "passed"
+  },
+  "motion": [
+    "Masked line reveals",
+    "Staggered copy entrances",
+    "Sticky soil-care story with changing images",
+    "Scroll-linked word fill",
+    "Project image reveal and depth",
+    "Photo parallax in closing section"
+  ],
+  "reducedMotion": "Animation setup guarded by prefers-reduced-motion; static content preserved. OS setting not changed during QA.",
+  "visualLimit": "Source team photo remains low resolution."
+}
